@@ -1,23 +1,29 @@
 ---
 title: "About"
-date: "2018-07-19"
-author: "Radek"
+date: "2020-01-08"
+author: "Mecit"
 path: "/about"
 ---
 
 ## Hi there
 
-My name is Radek and I'm the author of this starter. I made it to help you present your ideas easier.
+My name is Mecit Semerci
 
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
+I’m a software developer living in Istanbul, Turkey. I graduated from maths department. I’ve been dealing with programming since I was 15.
 
-This starter is pretty basic and covers all of the essentials. All you have to do is start typing!
+I have started with Html and JavaScript then ASP, Borland Delphi, C, Fortran and VB.NET. Finally I decided to .NET and C# language in professional life. I’m also interested in Python. These days I’m developing enterprise projects.
 
-The starter includes:
+My hobbies are technology, entrepreneurship, sports, snowboard, photography and travel.
 
-- **light/dark mode**, depending on your preferences
-- great reading experience thanks to [**Inter UI font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
-- nice code highlighting thanks to [**PrismJS**](https://prismjs.com)
-- responsive youtube/vimeo etc. videos thanks to [**gatsby-remark-embed-video**](https://github.com/borgfriend/gatsby-remark-embed-video)
+I'm focusing a github open source project which is a distributed short url system with ASP.NET Core.
+https://github.com/yawlurl
 
-So, there you have it... enjoy!
+TechStack:
+
+* C#, Python, Java, Javascript
+* ASP.NET Core MVC, ASP.NET MVC, Web API,  
+* MSSQL, MySQL, MongoDB, Redis, T-SQL
+* ADO.NET WCF, Entity Framework
+* JQuery, Angular, Vue
+
+
