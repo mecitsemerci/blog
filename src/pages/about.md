@@ -4,6 +4,7 @@ date: "2020-01-08"
 author: "Mecit"
 path: "/about"
 ---
+![Me](../images/about-mecit.jpg)
 
 ## Hi there
 
