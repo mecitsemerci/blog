@@ -1,8 +1,8 @@
 ---
-title: "Showcase"
+title: "Projects"
 date: "2018-07-17"
 author: "Hello Robot"
-path: "/showcase"
+path: "/projects"
 ---
 
 ## Header 2
