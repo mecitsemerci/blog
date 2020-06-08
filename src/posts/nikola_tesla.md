@@ -6,9 +6,9 @@ author: "Mecit Semerci"
 excerpt: "I don't care that they stole my idea...  I care that they don't have any of their own. ― Nikola Tesla"
 ---
 
-Nikola Tesla'nın benim için ayrı bir yeri vardır. Kendisi şu an kullanmış olduğumuz çoğu teknolojinin fikir babası. 
+Nikola Tesla'nın benim için ayrı bir yeri vardır. Kullanmış olduğumuz çoğu teknolojinin fikir babasıdır. 
 
-Bilginin paylaşıldıkça neler yapabileceğini onun sayesinde görmüş olduk. Şu sözü çok herşeyi çok güzel açıklamıştır.
+Bilginin paylaşıldıkça neler yapabileceğini onun sayesinde görmüş olduk. Şu sözü herşeyi çok güzel açıklamıştır.
 
 > “I don't care that they stole my idea...  I care that they don't have any of their own” - Nikola Tesla
 
