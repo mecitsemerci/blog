@@ -8,14 +8,14 @@ const postCSSMixins = require('postcss-mixins')
 module.exports = {
   siteMetadata: {
     title: `Mecit Semerci Blog`,
-    description: `A simple starter for Gatsby. That's it.`,
+    description: `A software developer's blog`,
     copyrights: '',
     author: `@mecitsemerci`,
     logo: {
       src: '',
       alt: '',
     },
-    logoText: 'Mecit Semerci Blog',
+    logoText: 'mecit@blog ➜  ~',
     defaultTheme: 'dark',
     postsPerPage: 5,
     showMenuItems: 2,
