@@ -6,7 +6,7 @@ author: "Mecit Semerci"
 excerpt: "Golang json (un)marshal custom date formats"
 ---
 
-If we want to create a RESTFul api, we may need a date type field. Especially you are doing an integration api, the date format may not always be what you want. Json serialization on GO can be annoying sometimes. In such cases, you can follow a method like that.
+If we want to create a RESTFul API, we may need a date type field. Especially you are doing an integration API, the date format may not always be what you want. JSON serialization on GO can be annoying sometimes. In such cases, you can follow a method like that.
 
 ```go
 package customTypes
@@ -61,7 +61,7 @@ func (jt *JSONTime) ToTime() time.Time {
 
 ```
 
-Here, I'm using the RFC3339 format as default. I used the tablewriter package to give more organized output. If you want to use this package install it.
+Here, I'm using the RFC3339 format as default. I used the tablewriter package to give a more organized output. If you want to use this package install it.
 
 ```
 go get github.com/olekukonko/tablewriter
@@ -113,4 +113,4 @@ Output
 
 ```
 
-If you want get "ms" values for convert to String, use RFC3339Nano instead of RFC3339 for DefaultFormat. I usually use dates in UTC, If I need to use it local time, it will be more advantageous to change later.
+If you want to get "ms" values for convert to String, use RFC3339Nano instead of RFC3339 for DefaultFormat. I usually use dates in UTC, If I need to use its local time, it will be more advantageous to change later.
