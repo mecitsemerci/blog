@@ -81,14 +81,15 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [
-    'gatsby',
-    'minimal',
-    'starter',
+    'Mecit',
+    'Semerci',
+    'programming',
+    'software',
     'blog',
-    'theme',
+    'development',
     'dark',
     'light',
-    'personal site',
+    'tech',
   ],
 }
 
