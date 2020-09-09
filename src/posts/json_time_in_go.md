@@ -36,36 +36,31 @@ var layouts = []string{
 // JSONTime
 func (jt *JSONTime) String() string {
 	t := time.Time(*jt)
-	return fmt.Sprintf("%q", t.Format(DefaultFormat))
+	return t.Format(DefaultFormat)
 }
 
 func (jt JSONTime) MarshalJSON() ([]byte, error) {
-	return []byte(jt.String()), nil
+	return []byte(fmt.Sprintf(`"%s"`,jt.String())), nil
 }
 
 func (jt *JSONTime) UnmarshalJSON(b []byte) error {
 	timeString := strings.Trim(string(b), `"`)
-
 	for _, layout := range layouts {
-		if t, err := time.Parse(layout, timeString); err == nil {
+		t, err := time.Parse(layout, timeString)
+		if err == nil {
 			*jt = JSONTime(t)
 			return nil
 		}
 	}
-	return errors.New("Invalid date format")
+	return errors.New(fmt.Sprintf("Invalid date format: %s", timeString))
 }
 
 func (jt *JSONTime) ToTime() time.Time {
 	return time.Time(*jt)
 }
-
 ```
 
-Here, I'm using the RFC3339 format as default. I used the tablewriter package to give a more organized output. If you want to use this package install it.
-
-```
-go get github.com/olekukonko/tablewriter
-```
+Here, I'm using the RFC3339 format as default.
 
  Let's try it out.
 
@@ -74,6 +69,7 @@ func main() {
 	jsonValue := []byte(`{"dates":[	"2020-10-29T15:04:34",
                                    	"2020-10-29T15:04:34Z",
 									"2020-10-29T15:04:34.344Z",
+									"2020-09-01T00:00Z",
 									"2020-10-29 15:04",
                                    	"2020-10-29 15:04:34",
 									"2020-10-29 15:04:34.344"
@@ -86,31 +82,52 @@ func main() {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Index", "Date", "Date(Local)"})
-	table.SetBorders(tablewriter.Border{Left: true, Top: false, Right: true, Bottom: false})
-	table.SetCenterSeparator("|")
-	table.SetAutoWrapText(false)
+
 	for index, date := range model["dates"] {
 		loc, _ := time.LoadLocation("Turkey")
-		table.Append([]string{strconv.Itoa(index), date.String(), date.ToTime().In(loc).String()})
+		fmt.Println([]string{strconv.Itoa(index), date.String(), date.ToTime().In(loc).String()})
 	}
-	table.Render()
 }
 ```
 
 Output
 
 ```
-| INDEX |          DATE          |            DATE(LOCAL)            |
-|-------|------------------------|-----------------------------------|
-|     0 | "2020-10-29T15:04:34Z" | 2020-10-29 18:04:34 +0300 +03     |
-|     1 | "2020-10-29T15:04:34Z" | 2020-10-29 18:04:34 +0300 +03     |
-|     2 | "2020-10-29T15:04:34Z" | 2020-10-29 18:04:34.344 +0300 +03 |
-|     3 | "2020-10-29T15:04:00Z" | 2020-10-29 18:04:00 +0300 +03     |
-|     4 | "2020-10-29T15:04:34Z" | 2020-10-29 18:04:34 +0300 +03     |
-|     5 | "2020-10-29T15:04:34Z" | 2020-10-29 18:04:34.344 +0300 +03 |
+| INDEX |         DATE         |            DATE(LOCAL)            |
+|-------|----------------------|-----------------------------------|
+|     0 | 2020-10-29T15:04:34Z | 2020-10-29 18:04:34 +0300 +03     |
+|     1 | 2020-10-29T15:04:34Z | 2020-10-29 18:04:34 +0300 +03     |
+|     2 | 2020-10-29T15:04:34Z | 2020-10-29 18:04:34.344 +0300 +03 |
+|     3 | 2020-09-01T00:00:00Z | 2020-09-01 03:00:00 +0300 +03     |
+|     4 | 2020-10-29T15:04:00Z | 2020-10-29 18:04:00 +0300 +03     |
+|     5 | 2020-10-29T15:04:34Z | 2020-10-29 18:04:34 +0300 +03     |
+|     6 | 2020-10-29T15:04:34Z | 2020-10-29 18:04:34.344 +0300 +03 |
 
 ```
 
 If you want to get "ms" values for convert to String, use RFC3339Nano instead of RFC3339 for DefaultFormat. I usually use dates in UTC, If I need to use its local time, it will be more advantageous to change later.
+
+Now let's try Marshal time.Time variable
+
+```go
+func main() {
+
+	date := time.Date(2020, 9, 9, 13, 34, 17, 0, time.UTC)
+	jt := customTypes.JSONTime(date)
+
+	byteValue, err := json.Marshal(jt)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	fmt.Println(string(byteValue))
+}
+```
+
+Output
+
+```
+"2020-09-09T13:34:17Z"
+```
+
+[Gist Link](https://gist.github.com/mecitsemerci/6517ae38a4355ad44bf695d89c76a242)
