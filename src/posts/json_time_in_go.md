@@ -4,6 +4,7 @@ date: "2020-08-24"
 path: "/golang-json-unmarshal-custom-date-format"
 author: "Mecit Semerci"
 excerpt: "Golang json (un)marshal custom date formats"
+tags: ["golang","custom-date-time","unmarshal","serialization"]
 ---
 
 If we want to create a RESTFul API, we may need a date type field. Especially you are doing an integration API, the date format may not always be what you want. JSON serialization on GO can be annoying sometimes. In such cases, you can follow a method like that.
