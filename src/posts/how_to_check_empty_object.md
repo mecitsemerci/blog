@@ -7,7 +7,7 @@ excerpt: "How to check for an empty object in Go"
 tags: ["golang","check","struct","array","slice","map"]
 ---
 
-I usually check some items (struct, array, slice, map, pointer etc.) but I don't like using too many if blocks for object checking. So I created a check helper package for object checking. Go reflection package helped a lot with this.
+I usually empty check some items (struct, array, slice, map, pointer etc.) but I don't like using too many if blocks for object checking. So I created a check helper package for object checking. Go reflection package helped a lot with this.
 
 ```go
 package check
