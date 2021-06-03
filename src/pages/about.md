@@ -12,18 +12,18 @@ My name is Mecit Semerci
 
 I’m a software developer. I’ve been dealing with programming since I was 15.
 
-I have started with Html and JavaScript then C, Fortran, Borland Delphi, ASP and VB.NET. Finally I decided to .NET and C# language in professional life. I’m also interested in Python. These days I’m developing with Python for backend services.
+I have started with Html and JavaScript then C, Fortran, Borland Delphi, ASP, and VB.NET. Finally, I decided to .NET and C# language in my professional life. I’m also interested in Python and Golang. These days I’m developing with Python and Golang for backend services.
 
-My hobbies are technology, entrepreneurship, sports, snowboard, photography and travel.
+My hobbies are technology, entrepreneurship, sports, snowboard, photography, and travel.
 
-TechStack:
+Tech Stack:
 
-* C#, Python, Java, Javascript
+* C#, Go, Python, Java, Javascript
 * ASP.NET (Core) MVC, ASP.NET Web API, WCF
-* FastAPI, Flask, Starlette, Pydantic,   
+* Gin-Gonic, FastAPI, Flask, Starlette, Pydantic
 * MSSQL, PostgreSQL, MySQL, MongoDB, Redis,
 * ADO.NET, Entity Framework (Core), SQLAlchemy
-* JQuery, Angular, Vue
+* JQuery, Angular, VueJS
 * Microsoft Azure, Google Cloud
-
-
+* Docker, Kubernetes
+* CQRS, TDD, DDD
